@@ -70,5 +70,14 @@ Mở repo  với Github Desktop
 
 Clone repo về Máy tính local.
 
-[Imgur](https://i.imgur.com/uHKgRVD.png)
+Tùy chọn clone
 
+![Imgur](https://i.imgur.com/69jVNGM.png)
+
+![Imgur](https://i.imgur.com/3BI09If.png)
+
+![Imgur](https://i.imgur.com/BPaWnrx.png)
+
+![Imgur](https://i.imgur.com/HVzRlzI.png)
+
+Sau khi mở bằng trình soạn thảo văn bản, Bạn sẽ thực hiện viết nội dung. Các hành động clone, add, commit,... làm như bình thường.
