@@ -17,7 +17,7 @@ VD
 ![](images/Screenshot_3.png)
 
 ![](images/Screenshot_4.png)
-Rồi quay lại git desktop để push lên github : 
+- Rồi quay lại git desktop để push lên github : 
 ![](images/Screenshot_5.png)
 Sau khi push lên mình vào pull requests
 ![](images/Screenshot_6.png)
