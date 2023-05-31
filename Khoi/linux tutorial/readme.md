@@ -1,1 +1,3 @@
-[1. Cài đặt LAMP](1.basic.md)
+[1. basic.linux](1.basic.md)
+[2.firewall.linnux](firewall.md)
+[3.LEMP.linux](LEMP.md)
