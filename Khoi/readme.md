@@ -5,4 +5,5 @@
 4. [backup](linux%20tutorial/backup.md)
 5. [netwok](linux%20tutorial/network.md)
 6. [LAMP_Ubuntu](linux%20tutorial/LAMP_Ubuntu.md)
-7. 
+7. [Log + syslog + rsyslog + log tap trung](linux%20tutorial/log%20%2B%20syslog%20%2B%20rsyslog%20%2B%20log_tap_trung.md)
+8. 
