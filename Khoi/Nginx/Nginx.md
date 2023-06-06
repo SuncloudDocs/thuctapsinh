@@ -27,14 +27,14 @@
 - Phục vụ nội dung tĩnh: Nginx có thể phục vụ các tài liệu tĩnh như CSS, HTML, JS, hình ảnh, video và âm thanh.
 - Tích hợp với ứng dụng web: Nginx có thể làm việc với các ứng dụng web như WordPress, Drupal, Joomla và Django để cung cấp trang web nhanh hơn và ổn định hơn.
 - Proxy: Nginx có thể hoạt động như một proxy server, giúp điều hướng các yêu cầu từ người dùng tới máy chủ web.
-### 4. Nhược điểm của nginx 
+## 4. Nhược điểm của nginx 
 - Không hỗ trợ các ứng dụng CGI
 - Hạn chế một vài tính năng so với apache : Mặc dù có một số tính năng mạnh mẽ hơn apache nhưng nó không nhiều plugin và module như apache => Khiến cho việc mở rộng khó hơn
 - Khó khăn trong việc cấu hình ban đầu : Vì yêu cầu kinh nghiệm
 - Chi phí cao cho phiên bản thương mại 
 - Khó sửa lỗi 
 
-### 5. Khác biệt giữa apache và nginx
+## 5. Khác biệt giữa apache và nginx
 - apache hoạt động theo kiến trúc module , nginx hoạt động theo kiểu kiến trúc ngăn xếp => do đó nginx có thể xử lý cùng lúc hàng ngàn kết nối mà không ảnh hưởng tới hiệu suất 
 - Hiệu suất: Nhờ kiến trúc ngắn xếp và việc xử lý bất đồng bộ, Nginx thường có hiệu suất cao hơn Apache trong các tình huống tải cao.
 - Cấu hình: Cấu hình của Nginx được viết bằng ngôn ngữ cấu trúc, dễ dàng hiểu và sửa đổi hơn so với các tập tin cấu hình của Apache.
@@ -42,7 +42,7 @@
 - Sử dụng tài nguyên: Nginx sử dụng ít bộ nhớ hơn so với Apache trong khi hoạt động, do đó có thể phù hợp hơn với các máy chủ có tài nguyên hạn chế.
 - Phù hợp với ứng dụng cụ thể: Mỗi máy chủ web có những điểm mạnh riêng và phù hợp với ứng dụng cụ thể. Ví dụ, Apache làm việc tốt hơn với các ứng dụng CGI, trong khi Nginx làm việc tốt hơn với các ứng dụng API RESTful.
 
- ## Phiên bản Nginx Plus 
+## Phiên bản Nginx Plus 
  ![Imgur](https://i.imgur.com/aGrbMCH.png)
 ### Một số lợi ích của Nginx Plus 
 - 1. Hỗ trợ khác hàng chuyên nghiệp : Không chỉ cung cấp các tính năng cơ bản như web server , Nginx Plus còn hỗ trợ chuyên sâu về các tính năng như Load Balancing ,Health Checks, Session Persistence và nhiều tính năng khác giúp các khách hàng doanh nghiệp có thể tối ưu hóa hiệu suất và độ tin cậy của trang web của mình.
@@ -53,6 +53,9 @@
 
 ### 1. Tải và lựa chọn phiên bản 
 - Update lại hệ thống 
+
+
+
 `sudo yum install update`
 `yum install -y epel-release`
 - Cài đặt sử dụng câu lệnh 
@@ -61,9 +64,11 @@
 - `systemctl start nginx`
 
 - Cấu hình firewall và restart lại dịch vụ:
-`sudo firewall-cmd --permanent --zone=public --add-service=http `
-`sudo firewall-cmd --permanent --zone=public --add-service=https`
-`sudo firewall-cmd --reload`
+```
+sudo firewall-cmd --permanent --zone=public --add-service=http 
+sudo firewall-cmd --permanent --zone=public --add-service=https
+sudo firewall-cmd --reload
+```
 
 - Để cho phép Nginx khởi động cùng server 
 `systemctl enable nginx`
@@ -101,12 +106,12 @@ worker_connections 1024;
 - Nó ảnh hưởng đến kết nối mạng giữa máy chủ nginx và người dùng ,Cho phép nhận nhiều kết nối cùng một lúc và chọn mô hình nào để xử lý yêu cầu kết nối.Ví dụ trên chỉ ra rằng số lượng kết nối tối đa được hỗ trợ trong mỗi quy trình làm việc la 1024
 
 #### 3. Phần thứ 3
-
-##### Về phía phần http 
- `http {
-    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
-                      '$status $body_bytes_sent "$http_referer" '
-                      '"$http_user_agent" "$http_x_forwarded_for"';
+**Về phía phần http** 
+ ```
+ http {
+    log_format  main  $remote_addr - $remote_user [$time_local] "$request" 
+                      $status $body_bytes_sent "$http_referer" 
+                      "$http_user_agent" "$http_x_forwarded_for";
 
     access_log  /var/log/nginx/access.log  main;
 
@@ -119,7 +124,7 @@ worker_connections 1024;
     include             /etc/nginx/mime.types;
     default_type        application/octet-stream;`
 
-  
+  ```
 
 -  Định dạng ghi chú trong tệp nhật ký truy cập: Các thông tin về yêu cầu được ghi lại trong tệp nhật ký truy cập, và định dạng được xác định bởi chuỗi định dạng `log_format.`
 -  Ghi nhật ký truy cập: Tệp nhật ký truy cập được lưu trữ tại đường dẫn `/var/log/nginx/access.log, `và bao gồm thông tin về các yêu cầu đã được xử lý bởi máy chủ Nginx.
@@ -130,32 +135,33 @@ worker_connections 1024;
 
 
 	
-		server {
-        listen       80;
-        listen       [::]:80;
-        server_name  _;
-        root         /usr/share/nginx/html;
+```
+server {
+    listen       80;
+    listen       [::]:80;
+    server_name  _;
+    root         /usr/share/nginx/html;
 
-    
-        include /etc/nginx/default.d/*.conf;
 
-        error_page 404 /404.html;
-        location = /404.html {
-        }
+    include /etc/nginx/default.d/*.conf;
 
-        error_page 500 502 503 504 /50x.html;
-        location = /50x.html {
-        }
-		
+    error_page 404 /404.html;
+    location = /404.html {
+    }
 
-#### Về phía phần server 
+    error_page 500 502 503 504 /50x.html;
+    location = /50x.html {
+    }
+```
+
+**Về phía phần server** 
 -  Dòng đầu tiên chỉ định rằng máy chủ Nginx sẽ lắng nghe trên cổng 80 (HTTP) trên giao diện mạng mặc định.
 -  Dòng thứ 2 :  chỉ định rằng máy chủ Nginx cũng sẽ lắng nghe trên cổng 80 trên tất cả các giao diện mạng IPv6.
 -  Dòng thứ 3 :  chỉ định rằng máy chủ này sẽ xử lý tất cả các yêu cầu được gửi đến địa chỉ IP của nó hoặc tên miền không biết trước (tức là không có tên miền hoặc ký tự đại diện)
 -  Dòng thứ 4 :	chỉ định rằng thư mục gốc cho máy chủ web là `/usr/share/nginx/html/.`
--  Dòng `'include /etc/nginx/default.d/*.conf;'` sử dụng `include directive` để tải các tệp cấu hình trong thư mục` /etc/nginx/default.d/ `vào trong khối máy chủ này.
--  Dòng `'error_page 404 /404.html;'` chỉ định rằng khi xảy ra lỗi 404 (không tìm thấy), Nginx sẽ hiển thị trang lỗi được chỉ định trong tệp `/usr/share/nginx/html/404.html.`
--  Dòng `'location = /404.html {}'` chỉ định rằng trang lỗi 404 được định nghĩa ở trên là một location block (khối vị trí) tại đường dẫn /404.html.
--  Dòng `'error_page 500 502 503 504 /50x.html;'` chỉ định rằng khi xảy ra lỗi 500, 502, 503 hoặc 504 (lỗi phía máy chủ), Nginx sẽ hiển thị trang lỗi được chỉ định trong tệp `/usr/share/nginx/html/50x.html.`
--  Dòng `'location = /50x.html {}'` chỉ định rằng trang lỗi 50x được định nghĩa ở trên là một location block (khối vị trí) tại đường dẫn /50x.html.
+-  Dòng `include /etc/nginx/default.d/*.conf;` sử dụng `include directive` để tải các tệp cấu hình trong thư mục` /etc/nginx/default.d/ `vào trong khối máy chủ này.
+-  Dòng `error_page 404 /404.html;` chỉ định rằng khi xảy ra lỗi 404 (không tìm thấy), Nginx sẽ hiển thị trang lỗi được chỉ định trong tệp `/usr/share/nginx/html/404.html.`
+-  Dòng `location = /404.html {}` chỉ định rằng trang lỗi 404 được định nghĩa ở trên là một location block (khối vị trí) tại đường dẫn /404.html.
+-  Dòng `error_page 500 502 503 504 /50x.html;` chỉ định rằng khi xảy ra lỗi 500, 502, 503 hoặc 504 (lỗi phía máy chủ), Nginx sẽ hiển thị trang lỗi được chỉ định trong tệp `/usr/share/nginx/html/50x.html.`
+-  Dòng `location = /50x.html {}` chỉ định rằng trang lỗi 50x được định nghĩa ở trên là một location block (khối vị trí) tại đường dẫn /50x.html.
 
