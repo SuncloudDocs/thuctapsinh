@@ -1,7 +1,7 @@
 # Nginx 
 ## Định nghĩa 
 ![Imgur](https://i.imgur.com/z5gPl85.png)
-- Nginx là một máy chủ web server mã nguồn mở, được sử udnjg như 1 web server 
+- Nginx là một máy chủ web server mã nguồn mở, được sử dụng như 1 web server 
 - Được thiết kế hướng tối mục đích cải thiện hiệu năng và sự ổn định 
 - Có thể hoạt động như 1 proxy server ,resver proxy, và trung gian để cân bằng tải các máy chủ HTTP,TCP,UDP
 - Nginx cung cấp gần như tất cả các chức năng máy chủ web
@@ -11,7 +11,7 @@
 
 ### 2.2 Forword Proxy
 + Nginx không chỉ hoạt động như 1 reverse proxy mà nó có thể cân bằng tải .Nó có thể thực hiện chuyển tiếp các chức năng như lướt web.
-+ Có thể hiểu Forword Proxy : Nếu  kết nối bên ngoài mạng LAN được hình dung rất lớn , thì máy khách hàng trong mạng LAN cần truy cập internet thông qua 1 máy chủ proxy => Loại dịch vụ này có thể hiểu là forword proxy
++ Có thể hiểu Forword Proxy : Nếu kết nối bên ngoài mạng LAN được hình dung rất lớn , thì máy khách hàng trong mạng LAN cần truy cập internet thông qua 1 máy chủ proxy => Loại dịch vụ này có thể hiểu là forword proxy
 
 ### 2.3 Reverse Proxy 
  + Máy client sẽ gửi 1 request đến reverse proxy server . Sau đó reverse proxy server sẽ lấy dữ liệu từ máy chủ để gửi về máy client , trong một khoảng thời gian thì reserse proxy server taget 1 máy chủ server ở bên ngoài . Nhằm mục đích ẩn IP của máy chủ 
@@ -91,17 +91,19 @@ mở file `/etc/nginx/nginx.conf` :
 
 
 #### 1. Khối toàn cầu
-worker_processes auto;
-Đây là cấu hình chính của dịch vụ xử lý , Giá trị của worker_processes càng lớn thì nó có thể xử lỹ hỗ trợ càng nhiều ,nhưng nó sẽ bị hàn chế bởi phần cứng phần mềm , nên thường để là auto
+`worker_processes auto;`
+- Đây là cấu hình chính của dịch vụ xử lý , Giá trị của `worker_processes `càng lớn thì nó có thể xử lỹ hỗ trợ càng nhiều ,nhưng nó sẽ bị hàn chế bởi phần cứng phần mềm , nên thường để là auto
 
 ##### 2. Phần khối sự kiện 
-events {
+`events {
 worker_connections 1024;
-}
-Nó ảnh hưởng đến kết nối mạng giữa máy chủ nginx và người dùng ,Cho phép nhận nhiều kết nối cùng một lúc và chọn mô hình nào để xử lý yêu cầu kết nối.Ví dụ trên chỉ ra rằng số lượng kết nối tối đa được hỗ trợ trong mỗi quy trình làm việc la 1024
+}`
+- Nó ảnh hưởng đến kết nối mạng giữa máy chủ nginx và người dùng ,Cho phép nhận nhiều kết nối cùng một lúc và chọn mô hình nào để xử lý yêu cầu kết nối.Ví dụ trên chỉ ra rằng số lượng kết nối tối đa được hỗ trợ trong mỗi quy trình làm việc la 1024
 
-##### 3. Phần thứ 3
- http {
+#### 3. Phần thứ 3
+
+##### Về phía phần http 
+ `http {
     log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
                       '$status $body_bytes_sent "$http_referer" '
                       '"$http_user_agent" "$http_x_forwarded_for"';
@@ -115,15 +117,18 @@ Nó ảnh hưởng đến kết nối mạng giữa máy chủ nginx và ngườ
     types_hash_max_size 4096;
 
     include             /etc/nginx/mime.types;
-    default_type        application/octet-stream;
+    default_type        application/octet-stream;`
 
   
 
-- 1. Định dạng ghi chú trong tệp nhật ký truy cập: Các thông tin về yêu cầu được ghi lại trong tệp nhật ký truy cập, và định dạng được xác định bởi chuỗi định dạng log_format.
-- 2. Ghi nhật ký truy cập: Tệp nhật ký truy cập được lưu trữ tại đường dẫn /var/log/nginx/access.log, và bao gồm thông tin về các yêu cầu đã được xử lý bởi máy chủ Nginx.
-- 3. Thiết lập hiệu suất: Nginx có thể được cấu hình để cải thiện hiệu suất bằng cách sử dụng các tùy chọn như sendfile, tcp_nopush, tcp_nodelay và keepalive_timeout.
-- 4. Định dạng MIME: File /etc/nginx/mime.types chứa danh sách các định dạng tệp được hỗ trợ bởi máy chủ Nginx.
-- 5. Thư mục cấu hình: Các tệp cấu hình được tải vào từ thư mục /etc/nginx/conf.d/, bao gồm các cấu hình cho ứng dụng và trang web được phục vụ trên máy chủ Nginx.
+-  Định dạng ghi chú trong tệp nhật ký truy cập: Các thông tin về yêu cầu được ghi lại trong tệp nhật ký truy cập, và định dạng được xác định bởi chuỗi định dạng `log_format.`
+-  Ghi nhật ký truy cập: Tệp nhật ký truy cập được lưu trữ tại đường dẫn `/var/log/nginx/access.log, `và bao gồm thông tin về các yêu cầu đã được xử lý bởi máy chủ Nginx.
+-  Thiết lập hiệu suất: Nginx có thể được cấu hình để cải thiện hiệu suất bằng cách sử dụng các tùy chọn như `sendfile, tcp_nopush, tcp_nodelay` và `keepalive_timeout.`
+-  Định dạng MIME: File` /etc/nginx/mime.type`s chứa danh sách các định dạng tệp được hỗ trợ bởi máy chủ Nginx.
+-  Thư mục cấu hình: Các tệp cấu hình được tải vào từ thư mục `/etc/nginx/conf.d/`, bao gồm các cấu hình cho ứng dụng và trang web được phục vụ trên máy chủ Nginx.
+
+
+
 	
 		server {
         listen       80;
@@ -131,7 +136,7 @@ Nó ảnh hưởng đến kết nối mạng giữa máy chủ nginx và ngườ
         server_name  _;
         root         /usr/share/nginx/html;
 
-        # Load configuration files for the default server block.
+    
         include /etc/nginx/default.d/*.conf;
 
         error_page 404 /404.html;
@@ -143,14 +148,14 @@ Nó ảnh hưởng đến kết nối mạng giữa máy chủ nginx và ngườ
         }
 		
 
-- #### Về phía phần server 
-	- 1. Dòng đầu tiên chỉ định rằng máy chủ Nginx sẽ lắng nghe trên cổng 80 (HTTP) trên giao diện mạng mặc định.
-	- 2. Dòng thứ 2 :  chỉ định rằng máy chủ Nginx cũng sẽ lắng nghe trên cổng 80 trên tất cả các giao diện mạng IPv6.
-	- 3. Dòng thứ 3 :  chỉ định rằng máy chủ này sẽ xử lý tất cả các yêu cầu được gửi đến địa chỉ IP của nó hoặc tên miền không biết trước (tức là không có tên miền hoặc ký tự đại diện)
-	- 4. Dòng thứ 4 :	chỉ định rằng thư mục gốc cho máy chủ web là /usr/share/nginx/html/.
-	- 5. Dòng 'include /etc/nginx/default.d/*.conf;' sử dụng include directive để tải các tệp cấu hình trong thư mục /etc/nginx/default.d/ vào trong khối máy chủ này.
-	- 6. Dòng 'error_page 404 /404.html;' chỉ định rằng khi xảy ra lỗi 404 (không tìm thấy), Nginx sẽ hiển thị trang lỗi được chỉ định trong tệp /usr/share/nginx/html/404.html.
-- 7. Dòng 'location = /404.html {}' chỉ định rằng trang lỗi 404 được định nghĩa ở trên là một location block (khối vị trí) tại đường dẫn /404.html.
-- 8. Dòng 'error_page 500 502 503 504 /50x.html;' chỉ định rằng khi xảy ra lỗi 500, 502, 503 hoặc 504 (lỗi phía máy chủ), Nginx sẽ hiển thị trang lỗi được chỉ định trong tệp /usr/share/nginx/html/50x.html.
-- 9. Dòng 'location = /50x.html {}' chỉ định rằng trang lỗi 50x được định nghĩa ở trên là một location block (khối vị trí) tại đường dẫn /50x.html.
+#### Về phía phần server 
+-  Dòng đầu tiên chỉ định rằng máy chủ Nginx sẽ lắng nghe trên cổng 80 (HTTP) trên giao diện mạng mặc định.
+-  Dòng thứ 2 :  chỉ định rằng máy chủ Nginx cũng sẽ lắng nghe trên cổng 80 trên tất cả các giao diện mạng IPv6.
+-  Dòng thứ 3 :  chỉ định rằng máy chủ này sẽ xử lý tất cả các yêu cầu được gửi đến địa chỉ IP của nó hoặc tên miền không biết trước (tức là không có tên miền hoặc ký tự đại diện)
+-  Dòng thứ 4 :	chỉ định rằng thư mục gốc cho máy chủ web là `/usr/share/nginx/html/.`
+-  Dòng `'include /etc/nginx/default.d/*.conf;'` sử dụng `include directive` để tải các tệp cấu hình trong thư mục` /etc/nginx/default.d/ `vào trong khối máy chủ này.
+-  Dòng `'error_page 404 /404.html;'` chỉ định rằng khi xảy ra lỗi 404 (không tìm thấy), Nginx sẽ hiển thị trang lỗi được chỉ định trong tệp `/usr/share/nginx/html/404.html.`
+-  Dòng `'location = /404.html {}'` chỉ định rằng trang lỗi 404 được định nghĩa ở trên là một location block (khối vị trí) tại đường dẫn /404.html.
+-  Dòng `'error_page 500 502 503 504 /50x.html;'` chỉ định rằng khi xảy ra lỗi 500, 502, 503 hoặc 504 (lỗi phía máy chủ), Nginx sẽ hiển thị trang lỗi được chỉ định trong tệp `/usr/share/nginx/html/50x.html.`
+-  Dòng `'location = /50x.html {}'` chỉ định rằng trang lỗi 50x được định nghĩa ở trên là một location block (khối vị trí) tại đường dẫn /50x.html.
 
