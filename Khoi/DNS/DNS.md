@@ -24,8 +24,10 @@
 
   **4.2 Bản ghi loại AAAA**
 -` IP Version 6 Address records`: Sử dụng để chuyển đổi một domain name thành một địa chỉ IPv6.
+  
   **4.3 Bản ghi loại NS**
 - `Name Server records`: Lưu thông tin về Name Server. Nó định danh cho một máy chủ có thẩm quyền về một zone nào đó.
+
 **4.4 Bản ghi loại CNAME**
 - `Canonical Name records`: Bản ghi CNAME chỉ định một tên miền cần phải được truy vấn để giải quyết truy vấn DNS ban đầu. Vì vậy các bản ghi CNAME được sử dụng để tạo các bí danh tên miền. Bản ghi CNAME thực sự hữu ích khi chúng ta muốn bí danh tên miền của chúng ta tới miền bên ngoài. Trong các trường hợp khác, chúng ta có thể xóa các bản ghi CNAME và thay thế chúng bằng các bản ghi A.
 **4.5 Bản ghi loại PTR**
