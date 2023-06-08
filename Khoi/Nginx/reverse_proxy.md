@@ -12,7 +12,7 @@
 - Giám sát và quản lý: Reverse proxy cung cấp khả năng giám sát yêu cầu và lưu trữ nhật ký truy cập chi tiết. Điều này giúp trong việc phân tích và quản lý hệ thống, như đánh giá hiệu suất, xác định sự cố và tối ưu hóa cấu hình.
 - Kiểm soát truy cập: Reverse proxy cho phép thiết lập các quy tắc kiểm soát truy cập để kiểm soát quyền truy cập vào các máy chủ đích. Điều này giúp bảo vệ các tài nguyên và ứng dụng khỏi truy cập trái phép hoặc không được ủy quyền.
 
-#### 2.2Nhược điểm của reverse proxy:
+#### 2.2 Nhược điểm của reverse proxy:
 
 - Điểm hết hạn: Reverse proxy có thể trở thành một điểm hết hạn trong hệ thống, khiến cho toàn bộ ứng dụng bị tạm dừng nếu reverse proxy gặp sự cố.
 
@@ -85,7 +85,7 @@ Restart lại nginx :
 - Ý nghĩa của câu lệnh trên là
 Đây là một định dạng chuỗi log của Apache HTTP Server được gọi là "combined". Cụ thể, nó sẽ ghi lại các thông tin sau đây:
 
-(- Địa chỉ IP của client được truyền vào qua header X-Forwarded-For (" % {X-Forwarded-For} i ")
+```Địa chỉ IP của client được truyền vào qua header X-Forwarded-For (" % {X-Forwarded-For} i ")
 Tên máy chủ từ khách hàng yêu cầu (" % l ")
 Tên người dùng đăng nhập (nếu có) (" % u ")
 Thời điểm nhận yêu cầu từ khách hàng (" % t ")
@@ -94,8 +94,8 @@ Mã trạng thái HTTP trả về cho yêu cầu (" %> s ")
 Số byte được gửi từ máy chủ đến khách hàng (" % b ")
 Header Referer (nếu có) (" % {Referer} i ")
 Header User-Agent (" % {User-Agent} i ")
-Việc định dạng log này giúp quản trị viên web có thể theo dõi và phân tích hoạt động của các yêu cầu HTTP đến máy chủ.`
-)
+Việc định dạng log này giúp quản trị viên web có thể theo dõi và phân tích hoạt động của các yêu cầu HTTP đến máy chủ.
+```
 
 - Restart lại apache :
 

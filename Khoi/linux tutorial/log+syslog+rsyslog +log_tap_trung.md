@@ -140,15 +140,15 @@ Cấu hình thêm httpd mariadb
 
 Tại client tạo thêm file apache.conf và mariadb.conf ở thư mục `/etc/rsyslog.d/`
 - cấu hình apache.conf
-$ModLoad imfile
- #Apache error file :
+`$ModLoad imfile`
+```#Apache error file :
 $InputFileName /var/log/httpd/error_log
 $InputFileTag errorlog
 $InputFileSeverity info
 $InputFileFacility local1
-$InputRunFileMonitor
+$InputRunFileMonitor```
 
-#Apache access file:
+```#Apache access file:
 $InputFileName /var/log/httpd/access_log
 $InputFileName accesslog
 $InputFileSeverity info
@@ -156,21 +156,21 @@ $InputFileFacility local2
 $InputRunFileMonitor
 
 $InputFilePollInterval 10
-
+```
 ![Imgur](https://i.imgur.com/rtGrtdl.png)
 
 
 - Cấu hình mariadb 
- $ModLoad imfile
+` $ModLoad imfile`
 
 #mariadb.log file:
-$InputFileName /var/log/mariadb/mariadb.log
+``$InputFileName /var/log/mariadb/mariadb.log
 $InputFileTag mariadblog
 $InputFileSeverity info
 $InputFileFacility local3
-$InputRunFileMonitor
+$InputRunFileMonitor``
 
-$InputFilePollInterval 10
+``$InputFilePollInterval 10``
 
 ![Imgur](https://i.imgur.com/4KZynif.png)
 

@@ -31,7 +31,8 @@
 **4.4 Bản ghi loại CNAME**
 - `Canonical Name records`: Bản ghi CNAME chỉ định một tên miền cần phải được truy vấn để giải quyết truy vấn DNS ban đầu. Vì vậy các bản ghi CNAME được sử dụng để tạo các bí danh tên miền. Bản ghi CNAME thực sự hữu ích khi chúng ta muốn bí danh tên miền của chúng ta tới miền bên ngoài. Trong các trường hợp khác, chúng ta có thể xóa các bản ghi CNAME và thay thế chúng bằng các bản ghi A.
 **4.5 Bản ghi loại PTR**
-- `Reverse-lookup Pointer records`: bản ghi PTR được sử dụng để tra cứu tên miền dựa trên địa chỉ IP.
+- `Reverse-lookup Pointer records`: bản ghi PTR  được sử dụng để tra cứu tên miền dựa trên địa chỉ IP.
  **4.6 Bản ghi loại MX**
 - `Mail exchanger record`: MX chỉ định một máy chủ trao đổi thư cho một tên miền DNS. Thông tin được sử dụng bởi Giao thức truyền thư đơn giản (SMTP) để định tuyến email đến máy chủ thích hợp. Thông thường, có nhiều hơn một máy chủ trao đổi thư cho một miền DNS và mỗi DNS trong số chúng đã đặt ưu tiên.
+
 
