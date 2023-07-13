@@ -1,0 +1,45 @@
+# Một số giấy phép mã nguồn mở 
+## 1. MIT license
+- **Khả năng cho phép:** MIT license là giấy phép đơn giản, có nghĩa là nó cho phép người dùng tự do sử dụng, sửa đổi và phân phối phần mềm mà không có nhiều hạn chế.
+- **Sử dụng thương mại:** Giấy phép cho phép sử dụng phần mềm cho cả mục đích cá nhân và thương mại. Người dùng được phép bán hoặc sử dụng phần mềm cho bất kỳ mục đích nào, kể cả trong các dự án thương mại hoặc độc quyền.
+- **Phân phối:** Giấy phép MIT cho phép người dùng phân phối phần mềm và mọi sửa đổi hoặc sản phẩm phái sinh mà họ tạo ra. Điều này bao gồm chia sẻ phần mềm với người khác hoặc đưa phần mềm vào các dự án lớn hơn.
+- **Sửa đổi:** Người dùng có thể tự do sửa đổi phần mềm được cấp phép để phù hợp với nhu cầu của họ. Họ có thể thực hiện các thay đổi, thêm các tính năng mới hoặc tùy chỉnh nó mà không có bất kỳ giới hạn nào.
+- **Duy trì giấy phép:** Giấy phép MIT yêu cầu thông báo bản quyền gốc và bản thân giấy phép phải được bao gồm trong tất cả các bản sao hoặc các phần quan trọng của phần mềm. Điều này đảm bảo rằng các tác giả ban đầu nhận được ghi công phù hợp.
+- **Bảo hành:** Giấy phép bao gồm tuyên bố từ chối bảo hành, nêu rõ rằng phần mềm được cung cấp "nguyên trạng" mà không có bất kỳ bảo hành hoặc đảm bảo nào về tính phù hợp cho một mục đích cụ thể. Người dùng tự chịu rủi ro khi sử dụng phần mềm.
+- **Khả năng tương thích:** Giấy phép MIT được coi là giấy phép có tính cho phép cao và tương thích với nhiều giấy phép khác. Điều này cho phép các nhà phát triển kết hợp mã từ các dự án với các giấy phép khác nhau, tạo điều kiện hợp tác và tích hợp.
+## 2. GNU General Public License (GPL)
+- **Copyleft:** Giấy phép GNU, bao gồm cả GPL, là giấy phép copyleft. Copyleft đảm bảo rằng phần mềm và mọi sửa đổi hoặc sản phẩm phái sinh cũng được cấp phép theo các điều khoản tương tự. Nó nhằm mục đích bảo vệ quyền tự do của phần mềm và giữ cho nó là nguồn mở.
+- **Tự do sử dụng:** GPL cho phép người dùng tự do sử dụng phần mềm cho bất kỳ mục đích nào, dù là cá nhân, giáo dục hay thương mại. Không có hạn chế về cách sử dụng phần mềm.
+- **Tự do sửa đổi:** Người dùng có quyền tự do sửa đổi phần mềm, cải tiến và thêm các tính năng mới theo nhu cầu của họ. Các phiên bản sửa đổi cũng phải được phân phối theo các điều khoản của GPL.
+- **Tính khả dụng của mã nguồn:** Giấy phép GNU nhấn mạnh tầm quan trọng của việc cung cấp mã nguồn. Nếu phần mềm được phân phối, mã nguồn tương ứng phải được cung cấp hoặc làm cho người dùng có thể truy cập được.
+- **Phân phối:** GPL cho phép người dùng phân phối phần mềm, dù ở dạng nguyên bản hay dưới dạng các phiên bản đã sửa đổi. Tuy nhiên, việc phân phối phải được thực hiện theo cùng một giấy phép GPL, đảm bảo rằng tính tự do và tính mở của phần mềm được duy trì.
+- **Thông báo Giấy phép:**  GPL yêu cầu thông báo bản quyền gốc, bản thân GPL và mọi thông báo bổ sung hoặc tuyên bố từ chối trách nhiệm phải được giữ lại trong tất cả các bản sao của phần mềm. Điều này đảm bảo rằng quy kết thích hợp được đưa ra và các điều khoản cấp phép được giữ nguyên.
+- **Khả năng tương thích:** Giấy phép GNU được thiết kế để tương thích với các giấy phép GNU khác. Điều này có nghĩa là mã được phát hành theo một phiên bản GPL có thể được kết hợp với mã được phát hành theo một phiên bản GPL khác.
+- **Bằng sáng chế:** GPL bao gồm một điều khoản về bằng sáng chế, cung cấp sự bảo vệ chống lại các khiếu nại về bằng sáng chế. Nó đảm bảo rằng nếu ai đó phân phối công nghệ được cấp bằng sáng chế theo GPL, thì người nhận phần mềm sẽ được cấp giấy phép sử dụng công nghệ được cấp bằng sáng chế như một phần của phần mềm.
+## 3. GNU Lesser General Public License (LGPL)
+LGPL có một số điểm tương đồng với Giấy phép Công cộng GNU (GPL), nhưng nó có một số điểm khác biệt và tính năng nhất định:
+- **Thân thiện với thư viện:** LGPL thường được gọi là "library license" vì nó được thiết kế riêng cho các thư viện phần mềm. Nó cho phép các nhà phát triển sử dụng thư viện trong các ứng dụng độc quyền mà không yêu cầu toàn bộ ứng dụng phải được cấp phép theo LGPL.
+- **Liên kết động:** LGPL cho phép liên kết động với phần mềm độc quyền. Điều này có nghĩa là các nhà phát triển có thể liên kết thư viện được cấp phép LGPL với một chương trình độc quyền khi chạy, cho phép chương trình độc quyền sử dụng chức năng của thư viện.
+- **Phân phối mã đối tượng:** Nếu thư viện được cấp phép LGPL được phân phối ở dạng mã đối tượng (được biên dịch), người nhận phải có thể liên kết lại mã đối tượng với phiên bản thư viện đã sửa đổi. Điều này đảm bảo rằng người dùng có quyền tự do sửa đổi thư viện và sử dụng nó trong các dự án của riêng họ.
+- **Tính khả dụng của mã nguồn:** Nếu các sửa đổi được thực hiện đối với chính thư viện được LGPL cấp phép, thì mã nguồn cho những sửa đổi đó phải được cung cấp cho những người dùng nhận được thư viện đã sửa đổi. Tuy nhiên, yêu cầu phát hành mã nguồn không áp dụng cho ứng dụng sử dụng thư viện.
+- **Khả năng tương thích:** Giống như GPL, LGPL được thiết kế để tương thích với các giấy phép GNU khác. Điều này có nghĩa là mã được phát hành theo một phiên bản LGPL có thể được kết hợp với mã được phát hành theo một phiên bản LGPL hoặc GPL khác.
+- **Thông báo Giấy phép:** Tương tự như GPL, LGPL yêu cầu bao gồm các thông báo bản quyền và bản thân LGPL trong tất cả các bản sao của thư viện.
+## 4. Apache License 2.0
+- **Cho phép:** Giấy phép Apache là giấy phép nguồn mở cho phép người dùng tự do sử dụng, sửa đổi và phân phối phần mềm mà không có nhiều hạn chế.
+- **Sử dụng thương mại:** Giấy phép cho phép sử dụng phần mềm cho cả mục đích cá nhân và thương mại. Người dùng được phép bán hoặc sử dụng phần mềm cho bất kỳ mục đích nào, kể cả trong các dự án thương mại hoặc độc quyền.
+- **Phân phối lại:** Giấy phép Apache cho phép người dùng phân phối phần mềm và mọi sửa đổi hoặc sản phẩm phái sinh mà họ tạo ra. Điều này bao gồm chia sẻ phần mềm với người khác hoặc đưa phần mềm vào các dự án lớn hơn.
+- **Cấp bằng sáng chế:** Giấy phép bao gồm cấp bằng sáng chế, cung cấp sự bảo vệ chống lại khiếu nại bằng sáng chế. Nó cấp cho người dùng giấy phép sử dụng bất kỳ bằng sáng chế nào do những người đóng góp phần mềm nắm giữ.
+- **Bảo vệ đóng góp:** Giấy phép Apache cung cấp điều khoản bảo vệ đóng góp, trong đó nêu rõ rằng những người đóng góp cho phần mềm không thể kiện những người đóng góp hoặc người dùng khác vi phạm bằng sáng chế dựa trên những đóng góp của họ.
+- **Thông báo và Ghi nhận:** Giấy phép yêu cầu một số thông báo và ghi nhận phải được giữ lại trong tất cả các bản sao của phần mềm, bao gồm thông báo bản quyền, thông tin giấy phép và danh sách các thay đổi được thực hiện đối với mã.
+- **Khả năng tương thích:** Giấy phép Apache tương thích với các giấy phép nguồn mở khác, cho phép các nhà phát triển kết hợp mã từ các dự án với các giấy phép khác nhau. Điều này thúc đẩy sự hợp tác và hội nhập trong cộng đồng nguồn mở.
+- **Bảo hành:** Giấy phép bao gồm tuyên bố từ chối bảo hành, nêu rõ rằng phần mềm được cung cấp "nguyên trạng" mà không có bất kỳ bảo hành hoặc đảm bảo nào về tính phù hợp cho một mục đích cụ thể. Người dùng tự chịu rủi ro khi sử dụng phần mềm.
+
+## 5. BSD license
+- **Cho phép:** Giấy phép BSD được biết đến với tính cho phép cao,người dùng có thể tự do sử dụng, sửa đổi và phân phối phần mềm mà không có nhiều hạn chế.
+- **Phân phối lại:** Giấy phép cho phép người dùng phân phối phần mềm, bao gồm cả dạng nguồn và dạng nhị phân. Điều này cho phép đưa mã được cấp phép BSD vào các dự án lớn hơn hoặc tạo ra các tác phẩm phái sinh.
+- **Sử dụng thương mại:** Giấy phép BSD cho phép sử dụng thương mại, nghĩa là người dùng có thể kết hợp phần mềm vào các sản phẩm thương mại hoặc độc quyền mà không bị hạn chế.
+- **Sửa đổi:** Người dùng có quyền tự do sửa đổi phần mềm cho phù hợp với nhu cầu của họ. Họ có thể thực hiện các thay đổi, thêm các tính năng mới hoặc tùy chỉnh nó mà không có bất kỳ giới hạn nào.
+- **Thông báo và Ghi nhận:** Giấy phép BSD thường yêu cầu giữ lại một số thông báo và ghi nhận nhất định trong tất cả các bản sao của phần mềm, bao gồm cả thông báo bản quyền và tuyên bố từ chối trách nhiệm.
+- **Không xác nhận:** Giấy phép BSD thường bao gồm một điều khoản nói rằng việc sử dụng phần mềm không ngụ ý xác nhận hoặc liên kết với các tác giả hoặc người đóng góp ban đầu.
+- **Bảo hành:** Giống như các giấy phép nguồn mở trên, giấy phép BSD bao gồm tuyên bố từ chối bảo hành, tuyên bố rằng phần mềm được cung cấp "nguyên trạng" mà không có bất kỳ bảo hành hoặc đảm bảo nào về tính phù hợp cho một mục đích cụ thể.
+- **Các biến thể:** Có các biến thể khác nhau của giấy phép BSD, bao gồm Giấy phép BSD 2 Khoản được đơn giản hóa và Giấy phép BSD 3 Khoản rõ ràng hơn. Giấy phép BSD 2 Khoản đơn giản hơn và cung cấp ít nghĩa vụ hơn, trong khi Giấy phép BSD 3 Khoản thêm một yêu cầu bổ sung để giữ nguyên văn bản giấy phép trong tài liệu quảng cáo.
