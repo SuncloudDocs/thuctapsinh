@@ -23,3 +23,5 @@
 
 [Chapter 12: Excution on Bash](https://github.com/hoangbuii/helloCloud/blob/main/bash/Chap12.md)
 
+[Install WordPress](https://github.com/hoangbuii/helloCloud/blob/main/bash/install.sh)
+A bash script for setup wordpress
